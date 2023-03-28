@@ -31,13 +31,15 @@ const App = () => {
     <div>
       <Navbar/>
     </div>
-    <div>
-      <Filter filterData = {filterData}/>
-    </div>
-    <div className="w-11/12 max-w-[1200px] mx-auto flex flex-wrap justify-center item-center min-h[50vh]">
-      {
-        loading?(<spinner/>) : (<Cards courses = {courses}/>)
-      }
+    <div className="bg-[#002B5B]">
+      <div>
+        <Filter filterData = {filterData}/>
+      </div>
+      <div className="w-11/12 max-w-[1200px] mx-auto flex flex-wrap justify-center item-center min-h[50vh]">
+        {
+          loading?(<spinner/>) : (<Cards courses = {courses}/>)
+        }
+      </div>
     </div>
   </div>
 )};
