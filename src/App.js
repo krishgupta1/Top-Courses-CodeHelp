@@ -9,6 +9,7 @@ import { useState } from "react";
 const App = () => {
   const [courses, setCourses] = useState([]);
   const [loading, setLoading] = useState(true);
+  // const [category, setCategory] = useState(filterData[0].title) 
 
   async function fetchData(){
     setLoading(true);
@@ -18,7 +19,7 @@ const App = () => {
       setCourses(output.data);
     }
     catch(error) {
-      toast.error("Network me koi dikkat hai");
+      toast.error("Network me koi dikkat hai"); 
     }
     setLoading(false);
   }
@@ -33,11 +34,15 @@ const App = () => {
     </div>
     <div className="bg-[#002B5B]">
       <div>
-        <Filter filterData = {filterData}/>
+        <Filter
+          filterData = {filterData}
+          // category={category} 
+          // setCategory={setCategory} 
+        />
       </div>
       <div className="w-11/12 max-w-[1200px] mx-auto flex flex-wrap justify-center item-center min-h[50vh]">
         {
-          loading?(<spinner/>) : (<Cards courses = {courses}/>)
+          loading?(<spinner/>) : (<Cards courses = {courses} /* category={category} *//>)
         }
       </div>
     </div>
